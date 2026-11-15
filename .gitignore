@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.build/
+.swiftpm/
+Package.resolved
+.DS_Store
+*.wav

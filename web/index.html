@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beacon</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b2623'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f4d61f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="5"/>
+      <path d="M6.5 9.5a12 12 0 0 0 0 13M25.5 9.5a12 12 0 0 1 0 13" fill="none" stroke-width="2.6" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-name">Beacon</span>
+  </div>
+  <ul class="pills" aria-label="System status">
+    <li class="pill" id="pill-net"><span class="dot"></span><span class="pill-text">Checking network</span></li>
+    <li class="pill" id="pill-llm"><span class="dot"></span><span class="pill-text">Looking for Bonsai</span></li>
+    <li class="pill" id="pill-voice"><span class="dot"></span><span class="pill-text">Starting voice</span></li>
+  </ul>
+</header>
+
+<main class="layout">
+
+  <section class="stage" aria-live="polite">
+
+    <!-- Nothing open yet -->
+    <div class="idle" id="idle">
+      <h1 class="idle-title">Tell me what's happening.</h1>
+      <p class="idle-sub">Hold the space bar and talk. I'll find the right safety card and read it to you one step at a time. Nothing leaves this laptop.</p>
+      <div class="examples" id="examples">
+        <button class="example" data-say="My friend slipped on the rocks and cut his leg, it won't stop bleeding">“My friend cut his leg and it won't stop bleeding”</button>
+        <button class="example" data-say="We lost the trail an hour ago, it's getting dark and there's no signal">“We lost the trail and there's no signal”</button>
+        <button class="example" data-say="There was just an earthquake and the building is still shaking">“The building is shaking”</button>
+        <button class="example" data-say="He just collapsed and he's not breathing">“He collapsed and he's not breathing”</button>
+      </div>
+      <div class="library">
+        <h2 class="library-title">Or open a card yourself</h2>
+        <div class="library-grid" id="library"></div>
+      </div>
+    </div>
+
+    <!-- A card is open -->
+    <article class="card" id="card" hidden>
+      <div class="card-hazard" id="card-hazard" aria-hidden="true"></div>
+      <span class="card-hole" aria-hidden="true"></span>
+      <header class="card-head">
+        <div>
+          <h1 class="card-title" id="card-title"></h1>
+          <p class="card-call" id="card-call"></p>
+        </div>
+        <span class="severity" id="card-severity"></span>
+      </header>
+
+      <div class="now">
+        <p class="now-count" id="now-count"></p>
+        <p class="now-text" id="now-text"></p>
+
+        <div class="tool" id="timer" hidden>
+          <button class="tool-btn" id="timer-btn">Start timer</button>
+          <span class="tool-read" id="timer-read"></span>
+        </div>
+
+        <div class="tool" id="metro" hidden>
+          <span class="metro-pulse" id="metro-pulse" aria-hidden="true"></span>
+          <span class="tool-read"><b id="metro-count">1</b> of 30, at 110 pushes a minute</span>
+          <button class="tool-btn" id="metro-btn">Mute beat</button>
+        </div>
+      </div>
+
+      <nav class="step-nav" aria-label="Step controls">
+        <button id="btn-back">Back</button>
+        <button id="btn-repeat">Repeat</button>
+        <button id="btn-next" class="primary">Next step</button>
+        <span class="step-hint">or just say “next”</span>
+      </nav>
+
+      <div class="card-lower">
+      <ol class="steps" id="steps"></ol>
+
+      <div class="cautions">
+        <div>
+          <h2>Do not</h2>
+          <ul id="dont"></ul>
+        </div>
+        <div>
+          <h2>Get help urgently if</h2>
+          <ul id="redflags"></ul>
+        </div>
+      </div>
+      </div>
+      <p class="card-source" id="card-source"></p>
+    </article>
+  </section>
+
+  <aside class="side">
+    <section class="panel log-panel">
+      <div class="panel-head">
+        <h2>Incident log</h2>
+        <button class="quiet" id="btn-reset">Start over</button>
+      </div>
+      <ol class="log" id="log"></ol>
+      <p class="log-empty" id="log-empty">Everything said and done is timestamped here, ready to hand to responders.</p>
+      <button class="report-btn" id="btn-report">Write handoff report</button>
+    </section>
+
+    <section class="panel report" id="report" hidden>
+      <div class="panel-head">
+        <h2>Handoff report</h2>
+        <button class="quiet" id="btn-report-close">Close</button>
+      </div>
+      <pre class="report-text" id="report-text"></pre>
+      <div class="report-actions">
+        <button id="btn-report-read">Read aloud</button>
+        <button id="btn-report-copy">Copy</button>
+        <span class="report-by" id="report-by"></span>
+      </div>
+    </section>
+
+    <section class="panel work">
+      <h2>Work done on this laptop</h2>
+      <dl class="work-grid">
+        <div><dt>Heard</dt><dd id="w-stt">–</dd></div>
+        <div><dt>Decided</dt><dd id="w-llm">–</dd></div>
+        <div><dt>Spoke</dt><dd id="w-tts">–</dd></div>
+      </dl>
+      <p class="work-route" id="w-route">Waiting for the first request.</p>
+      <p class="work-tally" id="w-tally"></p>
+    </section>
+  </aside>
+</main>
+
+<footer class="dock">
+  <button class="talk" id="talk" aria-label="Hold to talk">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 1 0-7 0v5A3.5 3.5 0 0 0 12 15Zm6-3.5a6 6 0 0 1-12 0H4.2a7.8 7.8 0 0 0 6.9 7.7V22h1.8v-2.8a7.8 7.8 0 0 0 6.9-7.7H18Z"/></svg>
+  </button>
+  <div class="dock-mid">
+    <canvas class="wave" id="wave" height="44"></canvas>
+    <p class="caption" id="caption">Starting up…</p>
+  </div>
+  <form class="type" id="type-form" autocomplete="off">
+    <input id="type-input" type="text" placeholder="Or type here" aria-label="Type what is happening">
+    <button type="submit">Send</button>
+  </form>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

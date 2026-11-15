@@ -1,0 +1,340 @@
+{
+  "about": "Beacon safety cards. Written for this hackathon demo in plain spoken English, following widely published public first-aid and preparedness guidance (American Red Cross, American Heart Association, CDC, Ready.gov, US Forest Service). NOT medically reviewed. The language model never writes steps; it only picks a card and answers questions from the card text.",
+  "cards": [
+    {
+      "id": "severe_bleeding",
+      "title": "Severe bleeding",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "A wound is bleeding heavily and will not stop.",
+      "keywords": ["bleeding", "bleed", "blood", "deep cut", "cut", "gash", "wound", "stabbed", "slashed", "sliced", "laceration", "won't stop bleeding", "bleeding a lot", "bleeding badly", "lot of blood", "tourniquet", "amputated"],
+      "call": "Call emergency services as soon as you have any signal.",
+      "steps": [
+        {"text": "Press hard directly on the wound with a clean cloth, a shirt, or your bare hand."},
+        {"text": "Keep firm, steady pressure for ten minutes. Do not lift the cloth to look.", "timer": 600},
+        {"text": "If blood soaks through, add more cloth on top and press harder. Leave the first layer in place."},
+        {"text": "If an arm or leg is still bleeding dangerously, put a tourniquet two to three inches above the wound, not over a joint. Tighten until the bleeding stops and note the time."},
+        {"text": "Keep the person lying down, warm and still until help arrives."}
+      ],
+      "dont": ["Do not pull out an object stuck in the wound. Press around it instead.", "Do not give food or drink."],
+      "redflags": ["Blood is spurting or pooling on the ground", "The person is pale, cold, confused or faint"],
+      "notes": ["A belt or a strip of cloth twisted tight with a stick can work as a tourniquet if nothing else is available."],
+      "source": "American Red Cross first aid, Stop the Bleed"
+    },
+    {
+      "id": "cpr",
+      "title": "Not breathing: start CPR",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "Someone has collapsed, does not respond, and is not breathing normally.",
+      "keywords": ["not breathing", "isn't breathing", "stopped breathing", "no pulse", "cpr", "cardiac arrest", "heart stopped", "collapsed", "unresponsive", "won't wake up", "not responding", "gasping", "drowned", "drowning"],
+      "call": "Send someone to call emergency services and to look for an AED right now.",
+      "steps": [
+        {"text": "Tap the shoulders and shout. If there is no response and no normal breathing, start CPR now."},
+        {"text": "Send someone to call for help and find an AED. If you are alone, put your phone on speaker."},
+        {"text": "Kneel beside the chest. Put the heel of one hand on the center of the chest and your other hand on top."},
+        {"text": "Push hard and fast, about two inches deep, in time with the beat.", "metronome": 110},
+        {"text": "Let the chest rise fully between pushes. Never pause for more than ten seconds.", "metronome": 110},
+        {"text": "If you are trained, give two rescue breaths after every thirty pushes. If not, just keep pushing.", "metronome": 110},
+        {"text": "Keep going until the person breathes, an AED arrives, or someone takes over.", "metronome": 110}
+      ],
+      "dont": ["Do not stop to check for a pulse over and over.", "Do not be afraid of pushing too hard. Shallow pushes do not work."],
+      "redflags": ["Any adult who is unresponsive and not breathing normally needs CPR immediately"],
+      "notes": ["For a child, use one or two hands and push about two inches deep.", "For a baby, use two fingers or two thumbs and push about one and a half inches deep.", "If an AED arrives, switch it on and follow its spoken instructions."],
+      "source": "American Heart Association, Hands-Only CPR"
+    },
+    {
+      "id": "recovery_position",
+      "title": "Unconscious but breathing",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "Someone has passed out or cannot be woken, but is still breathing normally.",
+      "keywords": ["unconscious", "passed out", "fainted", "knocked out", "blacked out", "out cold", "still breathing", "is breathing", "won't wake", "recovery position"],
+      "call": "Call emergency services, or send someone to find signal.",
+      "steps": [
+        {"text": "Check breathing. Look, listen and feel for no more than ten seconds."},
+        {"text": "If they are breathing normally, roll them onto their side with the top knee bent and the head tilted slightly back."},
+        {"text": "Send someone for help, or call as soon as you have signal."},
+        {"text": "Keep them warm and watch their breathing the whole time."},
+        {"text": "If breathing stops or turns into gasping, roll them onto their back and start CPR."}
+      ],
+      "dont": ["Do not give anything to eat or drink.", "If you suspect a neck or back injury, move them only as much as needed to keep them breathing."],
+      "redflags": ["Breathing stops, or becomes noisy gasping", "They hit their head, or do not wake within a minute"],
+      "notes": [],
+      "source": "American Red Cross first aid"
+    },
+    {
+      "id": "choking",
+      "title": "Choking",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "Someone has food or an object stuck in their throat and cannot breathe or speak.",
+      "keywords": ["choking", "choke", "can't breathe", "cannot breathe", "something stuck", "stuck in throat", "food stuck", "heimlich", "swallowed", "turning blue"],
+      "call": "If the blockage does not clear quickly, get someone to call emergency services.",
+      "steps": [
+        {"text": "Ask, are you choking? If they can cough or speak, tell them to keep coughing hard."},
+        {"text": "If they cannot cough, speak or breathe, stand behind them and lean them forward."},
+        {"text": "Give five firm back blows between the shoulder blades with the heel of your hand."},
+        {"text": "Then give five abdominal thrusts. Make a fist just above the belly button, cover it with your other hand, and pull sharply in and up."},
+        {"text": "Keep repeating five back blows and five thrusts until the object comes out or they can breathe."},
+        {"text": "If the person becomes unresponsive, lower them to the ground and start CPR."}
+      ],
+      "dont": ["Do not reach blindly into the mouth with your fingers.", "Do not give water while they are choking."],
+      "redflags": ["Lips or face turning blue", "The person goes limp or silent"],
+      "notes": ["For a pregnant or very large person, give chest thrusts instead of abdominal thrusts.", "For a baby under one year, give five back blows and five chest thrusts. Never abdominal thrusts."],
+      "source": "American Red Cross first aid"
+    },
+    {
+      "id": "burn",
+      "title": "Burns and scalds",
+      "category": "medical",
+      "severity": "urgent",
+      "summary": "Skin has been burned by fire, a hot surface, hot liquid or steam.",
+      "keywords": ["burn", "burned", "burnt", "scald", "scalded", "boiling water", "hot water", "hot oil", "campfire", "stove", "fire", "blister", "blisters", "steam"],
+      "call": "Get medical help for large, deep, chemical or electrical burns.",
+      "steps": [
+        {"text": "Get away from the heat. If clothing is on fire, stop, drop and roll."},
+        {"text": "Cool the burn under cool running water for at least ten minutes. Twenty is better.", "timer": 600},
+        {"text": "Take off rings, watches and tight clothing near the burn before it swells. Leave anything that is stuck to the skin."},
+        {"text": "Cover the burn loosely with a clean non-stick dressing or clean plastic wrap."},
+        {"text": "Keep the person warm, and give small sips of water if they are fully alert."}
+      ],
+      "dont": ["No ice, butter, oil or toothpaste on a burn.", "Do not pop blisters."],
+      "redflags": ["The burn is bigger than the person's palm, or looks white, leathery or charred", "The burn is on the face, hands, feet, genitals or over a joint", "It is a chemical or electrical burn, or the person has trouble breathing"],
+      "notes": ["If there is no running water, use any clean cool water, and keep pouring."],
+      "source": "American Red Cross first aid"
+    },
+    {
+      "id": "fracture_sprain",
+      "title": "Broken bone or bad sprain",
+      "category": "medical",
+      "severity": "urgent",
+      "summary": "A fall or twist has injured an arm, leg, ankle or wrist and it may be broken.",
+      "keywords": ["broken", "broke", "fracture", "fractured", "sprain", "sprained", "twisted", "ankle", "wrist", "leg", "arm", "fell", "fall", "can't walk", "cannot walk", "swollen", "swelling", "bone", "splint", "rolled my ankle", "dislocated"],
+      "call": "Get help if the limb looks deformed, numb, cold or blue, or the bone is showing.",
+      "steps": [
+        {"text": "Stop and take all weight off the injury. Do not try to straighten it."},
+        {"text": "If there is a wound, cover it with a clean cloth and press gently around it to control bleeding."},
+        {"text": "Splint it the way you found it. Pad a stick, a trekking pole or a rolled jacket, and tie it so the joints above and below cannot move."},
+        {"text": "Check the fingers or toes past the injury. They should be warm, pink and able to feel touch. Loosen the splint if they are not."},
+        {"text": "Hold something cold, wrapped in cloth, on the injury for up to twenty minutes, and raise the limb if that does not hurt more.", "timer": 1200},
+        {"text": "Rest, stay warm, and plan how to get help. Do not walk on a leg that cannot take weight."}
+      ],
+      "dont": ["Do not push a bone back in.", "Do not move someone with a possible neck or back injury unless they are in danger."],
+      "redflags": ["Bone is visible, or the limb is bent the wrong way", "Fingers or toes are numb, cold or blue", "The injury is to the head, neck, back or hip"],
+      "notes": ["A sling for an arm can be made from a jacket or a shirt tied behind the neck."],
+      "source": "American Red Cross first aid"
+    },
+    {
+      "id": "hypothermia",
+      "title": "Hypothermia",
+      "category": "wilderness",
+      "severity": "urgent",
+      "summary": "Someone is dangerously cold: shivering hard, clumsy, confused or very sleepy.",
+      "keywords": ["hypothermia", "freezing", "frozen", "so cold", "very cold", "too cold", "shivering", "shiver", "can't stop shivering", "wet and cold", "snow", "fell in the water", "soaked", "numb", "frostbite", "slurring"],
+      "call": "Hypothermia with confusion or drowsiness is an emergency. Get help as soon as you can.",
+      "steps": [
+        {"text": "Get out of the wind, rain and snow, and put something between the person and the ground."},
+        {"text": "Gently swap wet clothes for dry layers. Cover the head and neck."},
+        {"text": "Wrap them in a sleeping bag, blankets or an emergency blanket. Share body heat if you need to."},
+        {"text": "Place warm, not hot, bottles or packs on the chest, neck and groin, wrapped in cloth."},
+        {"text": "If they are fully awake and can swallow, give warm sweet drinks and high-energy food."},
+        {"text": "Handle them gently, keep them lying flat, and keep warming until help arrives."}
+      ],
+      "dont": ["No alcohol.", "Do not rub the arms and legs, and do not use a hot bath."],
+      "redflags": ["Shivering stops but they are still cold", "Confusion, slurred speech or extreme sleepiness", "If they stop breathing, start CPR"],
+      "notes": [],
+      "source": "CDC, American Red Cross first aid"
+    },
+    {
+      "id": "heat_illness",
+      "title": "Heat stroke and heat exhaustion",
+      "category": "wilderness",
+      "severity": "critical",
+      "summary": "Someone is overheated: dizzy, sick, cramping, confused, or has collapsed in the heat.",
+      "keywords": ["heat stroke", "heatstroke", "heat exhaustion", "overheated", "overheating", "too hot", "sunstroke", "dizzy", "dehydrated", "dehydration", "stopped sweating", "heat", "sun", "cramps", "nauseous"],
+      "call": "Confusion, fainting or hot dry skin means heat stroke. That is an emergency.",
+      "steps": [
+        {"text": "Move to shade or a cool place and lie down. Stop all activity."},
+        {"text": "Take off extra clothing and gear."},
+        {"text": "Cool them fast. Soak the skin with water and fan hard, or sit them in cool water up to the neck if it is safe."},
+        {"text": "Put cold packs or wet cloths on the neck, armpits and groin."},
+        {"text": "If they are awake and not vomiting, give small sips of cool water or a sports drink."},
+        {"text": "Keep cooling until they feel better or help arrives."}
+      ],
+      "dont": ["Do not give fever medicine such as aspirin or acetaminophen. It does not help.", "Do not force fluids into someone who is confused or drowsy."],
+      "redflags": ["Confusion, fainting or a seizure", "Skin is hot, and sweating has stopped"],
+      "notes": [],
+      "source": "CDC, American Red Cross first aid"
+    },
+    {
+      "id": "snakebite",
+      "title": "Snake bite",
+      "category": "wilderness",
+      "severity": "critical",
+      "summary": "Someone has been bitten by a snake that may be venomous.",
+      "keywords": ["snake", "snakebite", "snake bite", "bitten", "bit me", "bite", "rattlesnake", "viper", "cobra", "fangs", "venom", "venomous"],
+      "call": "Treat every snake bite as an emergency and get to medical care as fast as you safely can.",
+      "steps": [
+        {"text": "Move away from the snake. Do not try to catch it or kill it."},
+        {"text": "Sit or lie down, and stay as calm and still as you can."},
+        {"text": "Take off rings, watches and tight clothing before swelling starts."},
+        {"text": "Wash the bite gently with soap and water if you have it, then cover it with a clean dry dressing."},
+        {"text": "Keep the bitten limb still in a comfortable position. Mark the edge of the swelling and write down the time."},
+        {"text": "Get to medical care. Walk slowly, and only if there is no other way out."}
+      ],
+      "dont": ["Do not cut the bite or try to suck out venom.", "No tourniquet and no ice.", "No alcohol, caffeine, aspirin or ibuprofen."],
+      "redflags": ["Trouble breathing, drooping eyelids or slurred speech", "Swelling that keeps spreading up the limb"],
+      "notes": ["If it is safe, remember the snake's color and pattern, or take a photo from a distance."],
+      "source": "CDC, venomous snake bites"
+    },
+    {
+      "id": "anaphylaxis",
+      "title": "Severe allergic reaction",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "After a sting, food or medicine, someone has swelling, hives, wheezing or trouble breathing.",
+      "keywords": ["allergic", "allergy", "allergic reaction", "anaphylaxis", "epipen", "epinephrine", "bee sting", "stung", "wasp", "peanut", "peanuts", "hives", "throat closing", "throat is closing", "swelling up", "lips swelling", "tongue swelling", "wheezing"],
+      "call": "Get emergency help even if they improve. The reaction can come back.",
+      "steps": [
+        {"text": "If they carry an epinephrine auto-injector, use it now. Press it into the outer thigh and hold it for the time printed on the label."},
+        {"text": "Get emergency help as soon as you can, even if they start to feel better."},
+        {"text": "Lay them flat with their legs raised. If breathing is hard, let them sit up instead."},
+        {"text": "If they are not better after five to ten minutes, give a second auto-injector if there is one.", "timer": 300},
+        {"text": "Stay with them and watch their breathing. If they stop breathing, start CPR."}
+      ],
+      "dont": ["Do not make them stand up or walk.", "Do not give food, drink or pills if they have trouble breathing or swallowing."],
+      "redflags": ["Trouble breathing, a tight throat or a hoarse voice", "Swollen tongue or lips, or fainting"],
+      "notes": ["The auto-injector can be used through clothing."],
+      "source": "American Red Cross first aid"
+    },
+    {
+      "id": "seizure",
+      "title": "Seizure",
+      "category": "medical",
+      "severity": "urgent",
+      "summary": "Someone is shaking or jerking and does not respond.",
+      "keywords": ["seizure", "seizing", "convulsing", "convulsion", "convulsions", "shaking uncontrollably", "jerking", "epilepsy", "epileptic", "fit", "foaming"],
+      "call": "Get emergency help if the seizure lasts more than five minutes or another one starts.",
+      "steps": [
+        {"text": "Stay calm and note the time the seizure started.", "timer": 300},
+        {"text": "Clear away anything hard or sharp. Ease them to the ground if they are standing."},
+        {"text": "Put something soft under the head and loosen anything tight around the neck."},
+        {"text": "Do not hold them down, and do not put anything in their mouth."},
+        {"text": "When the shaking stops, roll them onto their side and check they are breathing."},
+        {"text": "Stay with them and speak calmly until they are fully awake."}
+      ],
+      "dont": ["Nothing in the mouth. They cannot swallow their tongue.", "No food or water until they are fully alert."],
+      "redflags": ["The seizure lasts more than five minutes", "They do not wake up or breathe normally afterwards", "They are pregnant, diabetic, injured, or it happened in water"],
+      "notes": [],
+      "source": "CDC, seizure first aid"
+    },
+    {
+      "id": "stroke",
+      "title": "Possible stroke",
+      "category": "medical",
+      "severity": "critical",
+      "summary": "Sudden face drooping, arm weakness, strange speech or confusion.",
+      "keywords": ["stroke", "face drooping", "face is drooping", "droopy", "slurred", "slurring words", "can't lift arm", "one side", "numb on one side", "sudden confusion", "can't speak", "words don't make sense"],
+      "call": "A stroke is an emergency. Get help by any means you have.",
+      "steps": [
+        {"text": "Check the face. Ask them to smile. Does one side droop?"},
+        {"text": "Check the arms. Ask them to raise both. Does one drift down?"},
+        {"text": "Check speech. Ask them to repeat a simple sentence. Is it slurred or strange?"},
+        {"text": "If you see any of these signs, treat it as an emergency and note the time the symptoms began."},
+        {"text": "Rest them on their side with the head slightly raised, and reassure them."},
+        {"text": "Get help by any means. Send someone to find signal, or travel to where you can call."}
+      ],
+      "dont": ["No food, drink or medicine, including aspirin."],
+      "redflags": ["Any one of the face, arm or speech signs", "Sudden severe headache, or loss of vision or balance"],
+      "notes": ["Hospitals need to know when the person was last well. Write the time down."],
+      "source": "American Stroke Association, F.A.S.T."
+    },
+    {
+      "id": "lost",
+      "title": "Lost with no signal",
+      "category": "wilderness",
+      "severity": "urgent",
+      "summary": "You have lost the trail or do not know where you are, and your phone has no service.",
+      "keywords": ["lost", "i'm lost", "we're lost", "lost the trail", "off trail", "off the trail", "can't find the trail", "don't know where", "no signal", "no service", "no reception", "getting dark", "wrong turn", "stranded", "which way"],
+      "call": "Try an emergency call or text from high, open ground. Emergency calls can use any network in range.",
+      "steps": [
+        {"text": "Stop walking. Sit down, breathe, and drink some water. Panic is the real danger."},
+        {"text": "Think. When did you last know exactly where you were? Do not move again until you have a plan."},
+        {"text": "Look around for trail markers, landmarks, the weather, and how much daylight is left."},
+        {"text": "If you are not sure of the way back, stay where you are. People who stay put are found sooner."},
+        {"text": "Make yourself easy to find. Put bright clothing in the open, and give three whistle blasts or shouts, again and again."},
+        {"text": "Before dark, put on all your layers and make a shelter from the wind and rain."},
+        {"text": "Save your phone. Use low power mode, dim the screen, and try an emergency call or text from high open ground."}
+      ],
+      "dont": ["Do not split up the group.", "Do not travel in the dark or follow a stream down steep ground."],
+      "redflags": ["Someone is injured, very cold or out of water", "A storm or darkness is close"],
+      "notes": ["Three of anything, such as whistle blasts, light flashes or fires, is the standard distress signal."],
+      "source": "US Forest Service, If You Get Lost"
+    },
+    {
+      "id": "earthquake",
+      "title": "Earthquake",
+      "category": "disaster",
+      "severity": "urgent",
+      "summary": "The ground is shaking, or a strong earthquake has just happened.",
+      "keywords": ["earthquake", "quake", "shaking", "ground is shaking", "building is shaking", "aftershock", "tremor", "everything is shaking"],
+      "call": "Text instead of calling so the network stays free for emergencies.",
+      "steps": [
+        {"text": "Drop to your hands and knees right now."},
+        {"text": "Cover your head and neck. Get under a sturdy table or desk if one is close."},
+        {"text": "Hold on until the shaking stops. Stay away from windows and heavy furniture."},
+        {"text": "When it stops, check yourself and others for injuries, and put on sturdy shoes."},
+        {"text": "If you smell gas or see damage, get out and move to open ground. Use the stairs, never the elevator."},
+        {"text": "Expect aftershocks. Drop, cover and hold on each time."},
+        {"text": "If you are near the coast, move to high ground as soon as the shaking stops."}
+      ],
+      "dont": ["Do not run outside while the ground is shaking.", "Do not light matches or candles if there could be a gas leak."],
+      "redflags": ["Smell of gas, or sparks and damaged wiring", "Cracks in walls or a leaning building"],
+      "notes": ["If you are in bed, stay there and cover your head with a pillow.", "If you are trapped, tap on a pipe or wall instead of shouting, to save air."],
+      "source": "Ready.gov, earthquakes"
+    },
+    {
+      "id": "power_outage",
+      "title": "Power outage",
+      "category": "disaster",
+      "severity": "minor",
+      "summary": "The electricity is out and you do not know for how long.",
+      "keywords": ["power outage", "power is out", "power went out", "blackout", "no power", "no electricity", "lights went out", "electricity is out", "outage", "generator", "storm knocked"],
+      "call": "Call for help if someone depends on powered medical equipment.",
+      "steps": [
+        {"text": "Use flashlights or your phone light, not candles."},
+        {"text": "Keep the fridge and freezer closed. Food stays safe for about four hours in the fridge and forty-eight hours in a full freezer."},
+        {"text": "Unplug sensitive electronics and switch off appliances, so nothing surges when the power returns."},
+        {"text": "Stay warm or cool safely. Use layers and blankets in the cold, and shade, water and moving air in the heat."},
+        {"text": "Check on neighbors, older people, and anyone who relies on powered medical equipment."},
+        {"text": "Save your phone. Use low power mode, dim the screen, and keep one device switched off as a spare."}
+      ],
+      "dont": ["Never run a generator, grill or camp stove indoors or in a garage. The fumes can kill.", "Do not heat your home with a gas oven."],
+      "redflags": ["Headache, dizziness or nausea near a generator or stove means carbon monoxide. Get to fresh air.", "Someone depends on powered medical equipment"],
+      "notes": ["Leave one light switched on so you know when the power is back."],
+      "source": "Ready.gov, power outages"
+    },
+    {
+      "id": "flood",
+      "title": "Flood",
+      "category": "disaster",
+      "severity": "urgent",
+      "summary": "Water is rising around you, or a flash flood warning has been given.",
+      "keywords": ["flood", "flooding", "flooded", "flash flood", "water is rising", "rising water", "river is rising", "storm surge", "typhoon", "hurricane", "water coming in"],
+      "call": "If you are trapped by rising water, signal for help from the highest point you can reach.",
+      "steps": [
+        {"text": "Move to higher ground or a higher floor now. Do not wait."},
+        {"text": "Never walk or drive through flood water. Six inches of moving water can knock you off your feet."},
+        {"text": "Turn off the electricity at the main breaker, but only if you can reach it from a dry spot."},
+        {"text": "Take water, medicines, your phone, a charger and warm clothes with you."},
+        {"text": "If you are trapped, go to the highest level. Go onto the roof only if you must, and signal for help."},
+        {"text": "Stay out of flood water afterwards. It can hide debris, sewage and live wires."}
+      ],
+      "dont": ["Do not climb into a closed attic. You could be trapped by rising water.", "Do not touch electrical equipment if you are wet or standing in water."],
+      "redflags": ["Water is moving fast or rising quickly", "Downed power lines near water"],
+      "notes": [],
+      "source": "Ready.gov, floods"
+    }
+  ]
+}
